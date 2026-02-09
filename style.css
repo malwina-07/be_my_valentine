@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial", sans-serif;
+}
+
+.card {
+  background: #fff;
+  position: relative;
+  padding: 30px;
+  width: 320px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+.card img {
+  width: 160px;
+  margin-bottom: 15px;
+  padding-right: 20px;
+}
+
+.card h1 {
+  font-size: 22px;
+  color: #e63946;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #dd2c4c;
+  color: white;
+}
+
+#no {
+  background: #bbbbbb;
+  position: relative;
+  transition: transform 0.3s ease, rotate 0.3s ease;
+
+}
+
+.heart {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: red;
+  transform: rotate(45deg);
+  animation: float 6s linear infinite;
+  opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -7px;
+  left: 0;
+}
+
+.heart::after {
+  left: 7px;
+  top: 0;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh) rotate(-120deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+.name {
+  color: #e63946;
+  font-weight: bold;
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.confetti {
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: rgb(255, 217, 0);
+  opacity: 0.8;
+  animation: confetti 1.2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0.6);
+    opacity: 0;
+  }
+}
+
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.05);
+  }
+  20% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.08);
+  }
+  40% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+#yes-card {
+  background: #ffd6e8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+#yes-card .yes-text {
+  color: #ff4d6d;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  animation: heartbeat 2s ease-in-out infinite;
+  margin-bottom: 10px;
+}
+#yes-card .yes-normal {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#yes-card .subtext {
+  font-size: 18px;
+  color: #e63946;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+#yes-card .footer {
+  font-size: 12px;
+  color: #a83261;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  50% { transform: scale(1.1); }
+  75% { transform: scale(1.05); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.card-video {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  display: block;
+}
